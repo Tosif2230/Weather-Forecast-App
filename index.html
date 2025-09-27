@@ -11,15 +11,51 @@
   </head>
   <body class="min-h-screen p-4">
     <main class="container mx-auto">
-      
+      <header
+  class="sticky top-0 bg-[var(--bg-color2)] flex flex-wrap justify-between items-center mb-4 p-4 rounded-lg"
+>
+  <h1 class="text-xl font-semibold">
+    <i class="fa-regular fa-cloud-bolt-sun"></i> Weather Forecast
+  </h1>
 
-
-
-
-
-
-
-
+  <form
+    id="searchForm"
+    class="flex flex-wrap gap-2 items-center"
+    role="search"
+    onsubmit="return false;"
+  >
+    <input
+      type="text"
+      id="city_input"
+      aria-label="Search city"
+      placeholder="Enter city name"
+      class="bg-[var(--bg-color2)] border border-gray-500 px-4 py-2 rounded-full text-white focus:outline-none"
+    />
+    <button
+      type="button"
+      id="searchBtn"
+      class="bg-white text-black px-4 py-2 rounded-full flex items-center gap-1"
+    >
+      <i class="bx bx-search"></i> Search
+    </button>
+    <button
+      type="button"
+      id="locationBtn"
+      class="bg-orange-500 px-4 py-2 rounded-full flex items-center gap-1"
+    >
+      <i class="bx bx-current-location"></i> Current Location
+    </button>
+    <div
+      class="flex items-center gap-2 ml-2"
+      role="group"
+      aria-label="temperature unit toggle"
+    >
+      <button type="button" id="unitC" class="px-3 py-1 rounded-full">°C</button>
+      <button type="button" id="unitF" class="px-3 py-1 rounded-full">°F</button>
+    </div>
+    <div id="recentContainer" class="ml-2"></div>
+  </form>
+</header>
 
     </main>
     <script src="script.js"></script>

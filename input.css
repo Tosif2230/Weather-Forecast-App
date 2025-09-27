@@ -1,2 +1,32 @@
 @import "tailwindcss";
 
+
+:root {
+      --bg-color1: #212529;
+      --bg-color2: #2a2b2d;
+      --aqi-1: #d4e157;
+      --aqi-2: #ffee58;
+      --aqi-3: #ffca28;
+      --aqi-4: #ff7043;
+      --aqi-5: #ef5350;
+    }
+    body {
+      background-color: var(--bg-color1);
+      color: #fff;
+      
+    }
+    .card { background-color: var(--bg-color2); }
+    .air-index.aqi-1 { background-color: var(--aqi-1); }
+    .air-index.aqi-2 { background-color: var(--aqi-2); }
+    .air-index.aqi-3 { background-color: var(--aqi-3); }
+    .air-index.aqi-4 { background-color: var(--aqi-4); }
+    .air-index.aqi-5 { background-color: var(--aqi-5); }
+
+    .bg-clear { background: linear-gradient(180deg,#6dd5fa 0%, #2980b9 100%) !important; }
+    .bg-clouds { background: linear-gradient(180deg,#757f9a 0%, #d7dde8 100%) !important; }
+    .bg-rainy { background: linear-gradient(180deg,#2c3e50 0%, #4ca1af 100%) !important; }
+    .bg-snow { background: linear-gradient(180deg,#e6f0fa 0%, #cfe9ff 100%) !important; color: #000; }
+    .bg-thunder { background: linear-gradient(180deg,#434343 0%, #000000 100%) !important; }
+
+    /* small helper for forecast icons */
+    .forecast-item img { width: 40px; height: 40px; }
