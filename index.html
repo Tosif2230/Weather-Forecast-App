@@ -56,6 +56,41 @@
     <div id="recentContainer" class="ml-2"></div>
   </form>
 </header>
+<section class="grid grid-cols-1 lg:grid-cols-4 gap-4">
+  <!-- Left Section -->
+  <aside class="space-y-4">
+    <!-- Current Weather -->
+    <article class="card p-4 rounded-xl current-weather">
+      <div class="flex justify-between items-center">
+        <div>
+          <p class="text-gray-400">Now</p>
+          <h2 id="tempNow" class="text-3xl font-medium">___°C</h2>
+          <p id="descNow">_____</p>
+        </div>
+        <figure class="weather-icon">
+          <img
+            src="https://openweathermap.org/img/wn/04d@2x.png"
+            alt="Current weather icon"
+          />
+        </figure>
+      </div>
+      <hr class="my-3 border-gray-600" />
+      <footer>
+        <p class="text-sm">
+          <i class="bx bxs-calendar"></i> <span id="dateNow">_____</span>
+        </p>
+        <p class="text-sm">
+          <i class="bx bxs-map"></i> <span id="locNow">_____</span>
+        </p>
+      </footer>
+    </article>
+
+    <!-- 5 Day Forecast -->
+    <section class="card p-4 rounded-xl">
+      <h2 class="text-xl font-semibold mb-3">5 Day Forecast</h2>
+      <ul id="dayForecast" class="space-y-3 day-forecast"></ul>
+    </section>
+  </aside>
 
     </main>
     <script src="script.js"></script>
