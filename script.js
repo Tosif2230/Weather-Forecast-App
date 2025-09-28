@@ -56,3 +56,39 @@ function renderCurrentWeather(data) {
   fetchAirQuality(data.coord.lat, data.coord.lon);
 }
 function applyWeatherBackground(main) {}
+function formatPollutant(value) {
+  if (value === null || value === undefined || value < 0) return "N/A";
+  return Number(value).toFixed(2);
+}
+
+//fetch air_quality acordingly
+async function fetchAirQuality(lat, lon) {}
+
+// fetch AQI eith color coded
+function renderAQI(aqiData) {
+  if (!aqiData) return;
+  const c = aqiData.components;
+
+  document.getElementById('pm25').textContent = formatPollutant(c.pm2_5);
+  document.getElementById('pm10').textContent = formatPollutant(c.pm10);
+  document.getElementById('so2').textContent  = formatPollutant(c.so2);
+  document.getElementById('co').textContent   = formatPollutant(c.co);
+  document.getElementById('no').textContent   = formatPollutant(c.no);
+  document.getElementById('no2').textContent  = formatPollutant(c.no2);
+  document.getElementById('nh3').textContent  = formatPollutant(c.nh3);
+  document.getElementById('o3').textContent   = formatPollutant(c.o3);
+
+  const map = {
+    1: { label: "Good", color: "bg-green-400" },
+    2: { label: "Fair", color: "bg-yellow-400" },
+    3: { label: "Moderate", color: "bg-orange-400" },
+    4: { label: "Poor", color: "bg-red-500" },
+    5: { label: "Very Poor", color: "bg-purple-600" }
+  };
+
+  const idx = aqiData.main?.aqi || 1;
+  const el = document.querySelector('.air-index');
+  el.textContent = map[idx].label;
+  el.className = `air-index ${map[idx].color} text-black px-3 py-1 rounded-full`;
+}
+
