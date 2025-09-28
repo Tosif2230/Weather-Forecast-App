@@ -21,6 +21,7 @@
   </head>
   <body class="min-h-screen p-4">
     <main class="container mx-auto">
+      <!-- Header -->
       <header
         class="sticky top-0 bg-[var(--bg-color2)] flex flex-wrap justify-between items-center mb-4 p-4 rounded-lg"
       >
@@ -70,6 +71,8 @@
           <div id="recentContainer" class="ml-2"></div>
         </form>
       </header>
+
+      <!-- Main Weather Section -->
       <section class="grid grid-cols-1 lg:grid-cols-4 gap-4">
         <!-- Left Section -->
         <aside class="space-y-4">
@@ -105,6 +108,7 @@
             <ul id="dayForecast" class="space-y-3 day-forecast"></ul>
           </section>
         </aside>
+
         <!-- Right Section -->
         <section class="lg:col-span-3 space-y-6">
           <h2 class="text-xl font-semibold">Today</h2>
@@ -212,6 +216,7 @@
               <h3 id="feelsVal">___°C</h3>
             </article>
           </section>
+
           <!-- Hourly Forecast -->
           <h2 class="text-xl font-semibold">Today at</h2>
           <section
@@ -221,12 +226,15 @@
         </section>
       </section>
 
+      <!-- Footer -->
       <footer
         class="sticky top-0 bg-[var(--bg-color2)] flex justify-center items-center mb-4 p-4 rounded-lg"
       >
         Open Weather 2025
       </footer>
     </main>
+
+    <!-- JS -->
     <script src="script.js"></script>
   </body>
 </html>
