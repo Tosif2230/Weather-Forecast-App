@@ -91,4 +91,24 @@ function renderAQI(aqiData) {
   el.textContent = map[idx].label;
   el.className = `air-index ${map[idx].color} text-black px-3 py-1 rounded-full`;
 }
+async function fetchForecast(city) {}
 
+function renderForecast(list) {}
+
+function renderHourly(hourList) {}
+// for recent city 
+function saveRecentCity(city) { }
+
+function renderDropdown(cities) {
+  let dropdown = document.getElementById("recentCities");
+  if (!dropdown) {
+    dropdown = document.createElement("select");
+    dropdown.id = "recentCities";
+    dropdown.className = "bg-gray-800 text-white p-2 rounded-lg ml-2";
+    const container = document.getElementById('recentContainer');
+    container.appendChild(dropdown);
+    dropdown.addEventListener('change', e => { if (e.target.value) fetchWeather(e.target.value); });
+  }
+  dropdown.innerHTML = `<option value="">Recent</option>` +
+    cities.map(c=>`<option value="${c}">${c}</option>`).join('');
+}
